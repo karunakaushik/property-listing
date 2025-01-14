@@ -1,18 +1,25 @@
 import PropertyList from "@/components/server/property-list";
 import PropertySearch from "@/components/server/property-search";
-import { generateHouseData } from "@/lib/utils";
+import { Suspense } from "react";
 
 export default function Page({
   searchParams,
 }: {
   searchParams: { location?: string; price?: string; search?: string };
 }) {
-  const houseData = generateHouseData(10);
-
-  console.log(houseData, "house");
   if (!searchParams) {
     return <PropertyList />;
   }
 
-  return <PropertySearch searchParams={searchParams} />;
+  return (
+    <Suspense
+      fallback={
+        <p className="w-full flex justify-center text-xl">
+          Loading Properties...
+        </p>
+      }
+    >
+      <PropertySearch searchParams={searchParams} />
+    </Suspense>
+  );
 }
