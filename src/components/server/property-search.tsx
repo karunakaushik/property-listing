@@ -25,7 +25,11 @@ export default async function PropertySearch({
   const properties: Property[] = await res.json();
 
   if (!properties.length) {
-    return <div>No properties available</div>;
+    return (
+      <main className="w-full flex flex-col gap-4 justify-center items-center pt-6">
+        No properties available
+      </main>
+    );
   }
 
   return (

@@ -15,10 +15,5 @@ export async function GET(request: Request) {
 
   const properties = await searchProperties(filters);
 
-  const propertiesWithFavoriteStatus = properties.map((property) => ({
-    ...property,
-    isFavorite: property?.isFavorite || false,
-  }));
-
-  return NextResponse.json(propertiesWithFavoriteStatus);
+  return NextResponse.json(properties);
 }

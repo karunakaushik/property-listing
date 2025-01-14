@@ -1,21 +1,32 @@
 "use client";
 
+import { debounce } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function FilterPanel() {
   const router = useRouter();
   const [location, setLocation] = useState("");
   const [price, setPrice] = useState("");
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSearch = useCallback(() => {
     const query = new URLSearchParams();
     if (location) query.set("location", location);
     if (price) query.set("price", price);
 
     router.push(`/properties?${query.toString()}`);
-  };
+  }, [location, price, router]);
+
+  const debouncedSearch = useCallback(debounce(handleSearch, 700), [
+    handleSearch,
+  ]);
+
+  useEffect(() => {
+    debouncedSearch();
+    return () => {
+      debouncedSearch.cancel && debouncedSearch.cancel();
+    };
+  }, [location, price, debouncedSearch]);
 
   return (
     <header
@@ -25,45 +36,62 @@ export default function FilterPanel() {
         display: "flex",
         justifyContent: "space-between",
       }}
-      className="top-0 sticky"
+      className="top-0 sticky !z-20 "
     >
-      <div>
-        <h1 onClick={() => router.push("/properties")}>Property Listings</h1>
-      </div>
-      <form onSubmit={handleSearch} style={{ display: "flex", gap: "0.5rem" }}>
-        <input
-          type="text"
-          placeholder="Search by location"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          style={{
-            padding: "0.5rem",
-            borderRadius: "4px",
-            border: "1px solid #ccc",
-          }}
-        />
-        <input
-          type="number"
-          placeholder="Max price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-          style={{
-            padding: "0.5rem",
-            borderRadius: "4px",
-            border: "1px solid #ccc",
-          }}
-        />
-        <button
-          type="submit"
-          style={{
-            padding: "0.5rem",
-            borderRadius: "4px",
-            backgroundColor: "#0070f3",
-            color: "#fff",
-          }}
+      <div className="flex gap-4">
+        {" "}
+        <h1 className="cursor-pointer" onClick={() => router.push("/")}>
+          Home
+        </h1>
+        <h1
+          className="cursor-pointer"
+          onClick={() => router.push("/properties")}
         >
-          Search
-        </button>
+          Property Listings
+        </h1>{" "}
+      </div>
+
+      <form className="lg:flex-row flex-col flex gap-2 justify-end items-center">
+        <div className="flex gap-2 items-center">
+          <label>Location : </label>
+          <input
+            type="text"
+            placeholder="Search by location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            style={{
+              padding: "0.5rem",
+              borderRadius: "4px",
+              border: "1px solid #ccc",
+            }}
+          />
+        </div>{" "}
+        <div className="flex gap-2 items-center">
+          <label>Max Price($) : </label>
+          <input
+            type="number"
+            placeholder="Max price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            style={{
+              padding: "0.5rem",
+              borderRadius: "4px",
+              border: "1px solid #ccc",
+            }}
+          />
+        </div>
+        {(location || price) && (
+          <p
+            className="text-xs cursor-pointer"
+            onClick={() => {
+              setLocation("");
+              setPrice("");
+              router.push(`/properties`);
+            }}
+          >
+            Clear filter
+          </p>
+        )}
       </form>
     </header>
   );
