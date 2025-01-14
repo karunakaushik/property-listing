@@ -5,7 +5,9 @@ export default function Page({
   searchParams,
 }: {
   searchParams: { location?: string; price?: string; search?: string };
-}) {
+  }) {
+  
+  
   if (!searchParams) {
     return <PropertyList />;
   }

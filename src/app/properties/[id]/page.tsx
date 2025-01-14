@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Loading from "./loading";
 
 export default function PropertyDetailPage() {
   const router = useRouter();
@@ -23,7 +24,7 @@ export default function PropertyDetailPage() {
   }, [id]);
 
   if (!property) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (

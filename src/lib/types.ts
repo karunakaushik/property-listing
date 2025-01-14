@@ -10,6 +10,7 @@ export interface Property {
   };
   images: string[];
   status: "available" | "sold" | "pending";
+  isFavorite?: boolean;
 }
 
 export interface FilterParams {

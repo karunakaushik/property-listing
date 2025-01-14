@@ -9,6 +9,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 2, baths: 2, area: 1000 },
     images: ["image1.jpg", "image2.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "2",
@@ -18,6 +19,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 3, baths: 2, area: 1500 },
     images: ["image3.jpg", "image4.jpg"],
     status: "sold",
+    isFavorite: false,
   },
   {
     id: "3",
@@ -27,6 +29,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 5, baths: 4, area: 3500 },
     images: ["image5.jpg", "image6.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "4",
@@ -36,6 +39,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 4, baths: 3, area: 2500 },
     images: ["image7.jpg", "image8.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "5",
@@ -54,6 +58,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 3, baths: 2, area: 2200 },
     images: ["image11.jpg", "image12.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "7",
@@ -63,6 +68,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 4, baths: 3, area: 4000 },
     images: ["image13.jpg", "image14.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "8",
@@ -72,6 +78,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 3, baths: 2, area: 1800 },
     images: ["image15.jpg", "image16.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "9",
@@ -81,6 +88,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 5, baths: 4, area: 5000 },
     images: ["image17.jpg", "image18.jpg"],
     status: "sold",
+    isFavorite: false,
   },
   {
     id: "10",
@@ -90,6 +98,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 6, baths: 5, area: 6000 },
     images: ["image19.jpg", "image20.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "11",
@@ -99,6 +108,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 4, baths: 3, area: 2800 },
     images: ["image21.jpg", "image22.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "12",
@@ -108,6 +118,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 3, baths: 2, area: 2200 },
     images: ["image23.jpg", "image24.jpg"],
     status: "sold",
+    isFavorite: false,
   },
   {
     id: "13",
@@ -117,6 +128,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 3, baths: 2, area: 1900 },
     images: ["image25.jpg", "image26.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "14",
@@ -135,6 +147,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 3, baths: 2, area: 1800 },
     images: ["image29.jpg", "image30.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "16",
@@ -144,6 +157,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 4, baths: 3, area: 3000 },
     images: ["image31.jpg", "image32.jpg"],
     status: "sold",
+    isFavorite: false,
   },
   {
     id: "17",
@@ -153,6 +167,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 4, baths: 3, area: 2800 },
     images: ["image33.jpg", "image34.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "18",
@@ -162,6 +177,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 1, baths: 1, area: 700 },
     images: ["image35.jpg", "image36.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "19",
@@ -171,6 +187,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 5, baths: 5, area: 5000 },
     images: ["image37.jpg", "image38.jpg"],
     status: "sold",
+    isFavorite: false,
   },
   {
     id: "20",
@@ -180,6 +197,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 3, baths: 2, area: 2300 },
     images: ["image39.jpg", "image40.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "21",
@@ -189,6 +207,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 2, baths: 1, area: 1200 },
     images: ["image41.jpg", "image42.jpg"],
     status: "sold",
+    isFavorite: false,
   },
   {
     id: "22",
@@ -198,6 +217,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 2, baths: 1, area: 950 },
     images: ["image43.jpg", "image44.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "23",
@@ -207,6 +227,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 5, baths: 5, area: 4000 },
     images: ["image45.jpg", "image46.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "24",
@@ -216,6 +237,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 6, baths: 5, area: 5500 },
     images: ["image47.jpg", "image48.jpg"],
     status: "sold",
+    isFavorite: false,
   },
   {
     id: "25",
@@ -225,6 +247,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 3, baths: 2, area: 2100 },
     images: ["image49.jpg", "image50.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "26",
@@ -234,6 +257,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 2, baths: 1, area: 1100 },
     images: ["image51.jpg", "image52.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "27",
@@ -252,6 +276,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 3, baths: 2, area: 2000 },
     images: ["image55.jpg", "image56.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "29",
@@ -261,6 +286,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 4, baths: 3, area: 2200 },
     images: ["image57.jpg", "image58.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "30",
@@ -270,6 +296,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 4, baths: 3, area: 2800 },
     images: ["image59.jpg", "image60.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "31",
@@ -279,6 +306,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 4, baths: 4, area: 3500 },
     images: ["image61.jpg", "image62.jpg"],
     status: "sold",
+    isFavorite: false,
   },
   {
     id: "32",
@@ -288,6 +316,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 3, baths: 2, area: 2100 },
     images: ["image63.jpg", "image64.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "33",
@@ -297,6 +326,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 3, baths: 3, area: 2500 },
     images: ["image65.jpg", "image66.jpg"],
     status: "sold",
+    isFavorite: false,
   },
   {
     id: "34",
@@ -306,6 +336,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 5, baths: 5, area: 6000 },
     images: ["image67.jpg", "image68.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "35",
@@ -324,6 +355,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 2, baths: 1, area: 1200 },
     images: ["image71.jpg", "image72.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "37",
@@ -333,6 +365,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 5, baths: 4, area: 4800 },
     images: ["image73.jpg", "image74.jpg"],
     status: "sold",
+    isFavorite: false,
   },
   {
     id: "38",
@@ -342,6 +375,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 2, baths: 2, area: 1300 },
     images: ["image75.jpg", "image76.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "39",
@@ -351,6 +385,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 3, baths: 2, area: 2000 },
     images: ["image77.jpg", "image78.jpg"],
     status: "available",
+    isFavorite: false,
   },
   {
     id: "40",
@@ -360,6 +395,7 @@ const mockDatabase: Property[] = [
     specs: { beds: 3, baths: 3, area: 2700 },
     images: ["image79.jpg", "image80.jpg"],
     status: "sold",
+    isFavorite: false,
   },
 ];
 
@@ -382,6 +418,30 @@ export async function getPropertyById(id: string) {
   return mockDatabase.find((property) => property.id === id);
 }
 
+export async function favoritePropertyInDB(id: string) {
+  const property = mockDatabase.find((property) => property.id === id);
+
+  if (property) {
+    property.isFavorite = !property.isFavorite;
+    return property;
+  }
+
+  return null;
+}
+
 export async function favoriteProperty(id: string) {
-  return { id, status: "available" };
+  const res = await fetch(`/api/favorite/${id}`, {
+    method: "POST",
+    body: JSON.stringify({ id }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to favorite the property");
+  }
+
+  const result = await res.json();
+  return result;
 }
